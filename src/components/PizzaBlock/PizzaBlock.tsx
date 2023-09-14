@@ -48,7 +48,7 @@ const PizzaBlock: FC<PizzaBlockProps> = ({id, price, imageUrl, title, sizes, typ
     }
 
     //const cartItem = useAppSelector(state => state.cart.items.find(item => item.id === id))
-    const cartItem = useAppSelector(cartSelectorById(id)) // export const cartSelectorById = (id: number) => (state: RootState) => state.cart.items.find(item => item.id === id)
+    const cartItem = useAppSelector(cartSelectorById(id, sizes[currentSize], typeNames[currentType])) // export const cartSelectorById = (id: number) => (state: RootState) => state.cart.items.find(item => item.id === id)
     const addedPizza = cartItem ? cartItem.count : 0
 
     return (

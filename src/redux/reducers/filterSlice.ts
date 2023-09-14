@@ -17,7 +17,7 @@ const initialState: filterState = {
     categoryId: 0,
     currentPage: 1,
     selectedSort: {
-        name: 'популярности(DESC)',
+        name: 'популярности по убыванию',
         sortProperty: 'rating'
     },
     searchValue: ''

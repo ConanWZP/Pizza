@@ -15,12 +15,12 @@ interface ExtraProps {
 }
 
 export const sortList: sortModel[] = [
-    {name: 'популярности(DESC)', sortProperty: 'rating'},
-    {name: 'популярности(ASC)', sortProperty: '-rating'},
-    {name: 'цене(DESC)', sortProperty: 'price'},
-    {name: 'цене(ASC)', sortProperty: '-price'},
-    {name: 'алфавиту(DESC)', sortProperty: 'title'},
-    {name: 'алфавиту(ASC)', sortProperty: '-title'},
+    {name: 'популярности по убыванию', sortProperty: 'rating'},
+    {name: 'популярности по возрастанию', sortProperty: '-rating'},
+    {name: 'цене по убыванию', sortProperty: 'price'},
+    {name: 'цене по возрастанию', sortProperty: '-price'},
+    {name: 'алфавиту по убыванию', sortProperty: 'title'},
+    {name: 'алфавиту по возрастанию', sortProperty: '-title'},
 ]
 
 type SortPropsNew = {
@@ -59,11 +59,12 @@ const Sort: FC<SortPropsNew> = React.memo(({selectedSort}) => {
 
         return () => document.body.removeEventListener('click', handleClickOutside);
     }, []);
-
+    // style={selectedSort.name.includes('DESC') ? `${transform: 'rotate(180deg)'}` : ''}
     return (
         <div className="sort" ref={sortRef}>
             <div className="sort__label">
                 <svg
+                     style={!selectedSort.sortProperty.includes('-') ? {transform: 'rotate(180deg)'} : {}}
                     width="10"
                     height="6"
                     viewBox="0 0 10 6"

@@ -56,7 +56,7 @@ const Cart: FC = () => {
                 <div className="content__items">
                     {
                         items.map(item =>
-                            <CartItem key={item.id} {...item} />
+                            <CartItem key={`${item.id + item.type + item.size}`} {...item} />
                         )
                     }
 

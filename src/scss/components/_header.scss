@@ -18,9 +18,11 @@
 
   &__logo {
     display: flex;
+    align-items: center;
 
     img {
       margin-right: 15px;
+      object-fit: cover;
     }
 
     h1 {
@@ -28,7 +30,9 @@
       font-size: 24px;
       letter-spacing: 1%;
       text-transform: uppercase;
-      font-weight: 800;
+      font-weight: 700;
+      font-family: 'Dancing Script', cursive;
+
     }
 
     p {

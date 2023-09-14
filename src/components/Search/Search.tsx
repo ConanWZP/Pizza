@@ -29,21 +29,22 @@ const Search: FC = () => {
         }, 1000)
     , [],)*/
 
-    /*const debounceThroughHook = useDebounce(() => {
+    const updateSearchValue = useDebounce((str: any) => {
         console.log('hello')
-    }, 1000)*/
+        dispatch(setSearchValue(str))
+    }, 1000)
 
     const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value)
         updateSearchValue(e.target.value)
     }
 
-    const updateSearchValue = useCallback(
+    /*const updateSearchValue = useCallback(
         debounce((str) => {
             console.log(str)
             dispatch(setSearchValue(str))
         }, 1000), []
-    )
+    )*/
 
 
     return (

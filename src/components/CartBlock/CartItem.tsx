@@ -15,6 +15,8 @@ const CartItem: FC<typePizzaObject & extraTypesCartItem > = ({type, imageUrl, ti
     const onClickPlus = () => {
         const pizzaObj = {
             id,
+            type,
+            size
             //title,
             //price,
             //imageUrl,
@@ -25,14 +27,36 @@ const CartItem: FC<typePizzaObject & extraTypesCartItem > = ({type, imageUrl, ti
     }
 
     const onClickMinus = () => {
+        const pizzaObj = {
+            id,
+            type,
+            size
+            //title,
+            //price,
+            //imageUrl,
+            //type,
+            //size
+        } as typePizzaObject
         if (count>1) {
-            dispatch(minusPizza(id))
+            dispatch(minusPizza(pizzaObj))
         }
-        else dispatch(removeItem(id))
+        else dispatch(removeItem(pizzaObj))
     }
 
     const onClickRemoveItem = () => {
-        dispatch(removeItem(id))
+        const pizzaObj = {
+            id,
+            type,
+            size
+            //title,
+            //price,
+            //imageUrl,
+            //type,
+            //size
+        } as typePizzaObject
+        console.log(pizzaObj)
+        debugger
+        dispatch(removeItem(pizzaObj))
     }
 
     return (

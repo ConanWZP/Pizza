@@ -2,6 +2,7 @@ import React, {FC, useEffect, useRef, useState} from 'react';
 import './../scss/app.scss'
 
 import logoPizza from '../assets/img/pizza-logo.svg'
+import logoPizzaNew from '../assets/img/piz.jpg'
 import {NavLink, useLocation, useNavigate} from "react-router-dom";
 import Search from "./Search/Search";
 import {useAppSelector} from "../hooks";
@@ -39,9 +40,9 @@ const Header: FC = React.memo(() => {
             <div className="container">
                 <NavLink to={'/'}>
                     <div className="header__logo">
-                        <img width="38" src={logoPizza} alt="Pizza logo"/>
+                        <img width="100" src={logoPizzaNew} alt="Pizza logo"/>
                         <div>
-                            <h1>Pizza</h1>
+                            <h1>Pizza Express</h1>
                             <p>самая вкусная пицца</p>
                         </div>
                     </div>
